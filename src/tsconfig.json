@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "types": ["vite/client"],
+        "target": "es6",
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "strict": true,
+        "allowJs": true,
+        "paths": {
+            "three/examples/jsm/libs/dat.gui.module": [
+                "../node_modules/@types/dat.gui"
+            ]
+        },
+        "outDir": "target",
+    },
+    "include": ["**/*.ts", "**/*.js"],
+    "exclude": ["target","node_modules"]
+}

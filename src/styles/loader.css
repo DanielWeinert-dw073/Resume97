@@ -1,0 +1,213 @@
+#loading-screen > * {
+    --size: 15vw;
+    --margin: calc(-1*var(--size)/2);
+    --font-size: calc(12px + 0.5vw);
+    font-size: var(--font-size);
+}
+
+#loading-screen {
+	position: fixed;
+	z-index: 40;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #07001a;
+	opacity: 1;
+    will-change: opacity;
+ 	transition: 2s opacity;
+}
+
+.fade-out {
+    opacity: 0 !important;
+}
+
+.fade-in {
+    opacity: 1 !important;
+}
+
+#loader {    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--size);
+    height: var(--size);
+    margin: var(--margin) 0 0 var(--margin);
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #fff2aa;
+    animation: spin 2s linear infinite;
+}
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #9e7400; 
+    animation: spin 4s linear infinite;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #fedd1f;
+    animation: spin 2.6s linear infinite;
+}
+
+
+
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#loader-text {
+    font-family: "Orbitron";
+    font-weight: lighter ;
+    font-style: normal;
+    /* font-size: 20px; */
+    color: #fedd1f;
+    white-space: pre-wrap;
+    position: absolute;
+    top: 48%;
+    left: 65%;
+    transform: translate(0%, -50%);
+}
+
+#loader-text:after{
+    content: "|";
+    animation: fadein 500ms linear infinite alternate;
+}
+
+
+#loader-text > *{
+    line-height: 1;
+    margin: 0;
+}
+
+#loader-prompt{
+    position: absolute;
+    top:80vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;   
+    flex-direction: column;   
+    font-family: "Orbitron";
+    font-weight: lighter ;
+    font-style: normal;
+    color: #fedd1f;
+    text-align: center;
+    margin: 4px;       
+}
+
+#loader-landscape {
+    opacity: 0;
+}
+
+#loader-loading {
+    opacity: 1;
+    animation: blinking 2s 0s linear infinite;
+}
+
+#loader-start {
+    opacity: 0;
+}
+
+#loader-loaded {
+    display: grid;
+}
+ 
+#loader-loading , #loader-start{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#loader-loaded.loaded > #loader-loading {
+    animation: fadeout 0.5s 0s 1 ease-in both;
+}
+#loader-loaded.loaded > #loader-start {
+    animation: fadein 1.5s 0.5s 1 ease-out both;
+    cursor: pointer;
+}
+
+.fadein {
+    animation: fadein 1.5s 0s 1 linear both;
+}
+
+.fadeout {   
+    animation: fadeout 1.5s 0s 1 linear both;
+}
+
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeout {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes blinking {
+    0% {opacity: 1;}
+    50% {opacity: 0.2;}
+    100% {opacity: 1;}
+}
+
+
+/* show page */
+#loadOverlay{
+    display: none;
+}
+
+#loadOverlay.fade-in-out {
+    display: block;
+    animation: fade-in-out 7s 1 linear both;
+}
+
+@keyframes fade-in-out {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+/* header animation */
+#header1.print  { animation: fadein 0.2s 0.00s 1 linear both,  uppercase 0.2s 2s 1 linear both;}
+#header2.print  { animation: fadein 0.2s 1.15s 1 linear both,  uppercase 0.2s 2.75s 1 linear both;}
+#header3.print  { animation: fadein 0.2s 0.70s 1 linear both,  uppercase 0.2s 2.5s 1 linear both;}
+#header4.print  { animation: fadein 0.2s 0.90s 1 linear both,  uppercase 0.2s 2.25s 1 linear both;}
+#header5.print  { animation: fadein 0.2s 1.60s 1 linear both,  uppercase 0.2s 2.5s 1 linear both;}
+#header6.print  { animation: fadein 0.2s 1.40s 1 linear both,  uppercase 0.2s 2s 1 linear both;}
+#header7.print  { animation: fadein 0.2s 1.60s 1 linear both,  uppercase 0.2s 2.5s 1 linear both;}
+#header8.print  { animation: fadein 0.2s 0.90s 1 linear both,  uppercase 0.2s 2.25s 1 linear both;}
+#header9.print  { animation: fadein 0.2s 0.30s 1 linear both,  uppercase 0.2s 2s 1 linear both;}
+#header10.print { animation: fadein 0.2s 1.40s 1 linear both,  uppercase 0.2s 2.5s 1 linear both;}
+#header11.print { animation: fadein 0.2s 0.80s 1 linear both,  uppercase 0.2s 2.25s 1 linear both;}
+#header12.print { animation: fadein 0.2s 1.15s 1 linear both,  uppercase 0.2s 2s 1 linear both;}
+#header13.print { animation: fadein 0.2s 1.15s 1 linear both,  uppercase 0.2s 2.75s 1 linear both;}
+#header14.print { animation: fadein 0.2s 0.40s 1 linear both,  uppercase 0.2s 2.25s 1 linear both;}
+
+
+@keyframes uppercase {
+    0%{}
+    100%{text-transform:uppercase}
+}

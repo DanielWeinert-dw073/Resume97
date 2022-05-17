@@ -1,0 +1,215 @@
+
+.modal{
+  --theme-color: #fedd1f;
+  --modal-width:  var(--max-modal-width, 80vw);
+  --modal-height: var(--max-modal-height, 80vh);
+  --scale-out: 0.1,0.05;
+  --scale-mid: 0.8,0.1;
+  position: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(31, 32, 41, 0.5);
+  opacity: 0;
+  
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.modal-dialog {
+    pointer-events:auto;
+    position: relative;
+    border-radius: 0px;
+    border: 2px solid;
+    border-image: 
+    linear-gradient(
+      to right, 
+      rgba(0, 0, 0, 0),
+      #fedd1f, 
+      rgba(0, 0, 0, 0)
+    ) 100% 1%;
+    overflow: hidden;
+    background-color: rgba(31, 32, 41, 0.897);
+    -ms-flex-item-align: center;
+    align-self: center;
+    box-shadow: 0 12px 25px 0 rgba(199,175,189,.25);    
+    max-width: var(--modal-width);
+    max-height: var(--modal-height);
+    text-align: left;
+    z-index: 10;
+    display: flex;
+    pointer-events:none;
+}
+
+.modal-header{
+  width: 100%;
+  text-align: right;
+  position: fixed;
+  z-index: 20;
+}
+
+.modal-content{
+  text-align: left;
+  padding-left: 1.5rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  overflow-y: var(--modal-overflow, auto);;
+  overflow-x: hidden;
+  scrollbar-color:var(--theme-color) black;
+  scrollbar-width:thin;
+  pointer-events:auto;
+}
+
+.modal:not(.open) {
+  animation: modal-out 0.5s 1 ease both;
+}
+
+.modal.open {
+  animation: modal-in 0.5s 1 ease both;
+}
+
+.modal:not(.open) .modal-dialog , .modal:not(.open) .modal-corners {
+  animation: popup-out 0.5s 1 ease both;
+}
+.modal.open .modal-dialog, .modal.open{
+  animation: popup-in 0.5s 1 ease both;
+}
+
+.modal.open .modal-corners {
+  animation: popup-in 0.5s 1 ease both, flicker-filter 1s linear 0.25s 1 both;
+}
+
+@keyframes modal-in {
+  0%   {opacity: 0; visibility: visible;}
+  50%  {opacity: 1;                     }
+  100% {opacity: 1;                     }
+}
+
+@keyframes modal-out {
+  0%   {opacity: 1;                     }
+  50%  {opacity: 1;                     }
+  100% {opacity: 0;  visibility: hidden;}
+}
+
+@keyframes popup-in {
+  0%   {opacity: 0;  transform: scale(var(--scale-out));
+                    visibility: visible;}
+  40%  {opacity: 1;  transform: scale(var(--scale-mid));}
+  100% {opacity: 1;  transform: scale(1,1); visibility: visible;}
+}
+
+@keyframes popup-out {
+  0%   {opacity: 1;  transform: scale(1,1);}
+  60%  {opacity: 1;  transform: scale(var(--scale-mid));}
+  100% {opacity: 0;  transform: scale(var(--scale-out));
+                      visibility: hidden;}
+}
+
+button.close {
+  all: unset;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: #b89f15;
+  margin-top: 0.4rem;
+  margin-right: 0.7rem;
+  pointer-events:auto;
+}
+
+button.close:hover {
+  color: #7e6d10;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.modal ::-webkit-scrollbar-track {
+  background: #000000; 
+  border-radius: 2px;
+}
+ 
+/* Handle */
+.modal ::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 0),
+    #fedd1f, 
+    rgba(0, 0, 0, 0)
+  ) 1% 100%;
+}
+
+/* Handle on hover */
+.modal ::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.modal-corners{    
+  position: relative;
+  -ms-flex-item-align: center;
+  align-self: center;
+  border-radius: 2px;
+}
+
+.ui-corner {
+  --ui-border: 2px solid var(--theme-color);
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+}
+
+.ui-corner:nth-of-type(1) { top: -0.3rem; left: -0.3rem; border-left: var(--ui-border); border-top: var(--ui-border); }
+.ui-corner:nth-of-type(2) { top: -0.3rem; right: -0.3rem; border-right: var(--ui-border); border-top: var(--ui-border); }
+.ui-corner:nth-of-type(3) { bottom: -0.3rem; right: -0.3rem; border-bottom: var(--ui-border); border-right: var(--ui-border); }
+.ui-corner:nth-of-type(4) { bottom: -0.3rem; left: -0.3rem; border-bottom: var(--ui-border); border-left: var(--ui-border); }
+
+@keyframes flicker-filter {
+  0%   {filter: url(#filter) blur(4px); backdrop-filter: blur(2px);}
+  10%  {filter: url(#filter) blur(4px); backdrop-filter: blur(2px);}
+  11%  {filter: blur(1px); backdrop-filter: none;}
+  15%  {filter: url(#filter2) blur(2px); backdrop-filter: blur(2px);}
+  25%  {filter: url(#filter2) blur(2px); backdrop-filter: blur(2px);}
+  26%  {filter: blur(1px); backdrop-filter: none;}
+  30%  {filter: url(#filter) blur(4px); backdrop-filter: blur(2px);}
+  39%  {filter: url(#filter) blur(4px); backdrop-filter: blur(2px);}
+  40%  {filter: blur(1px); backdrop-filter: none;}
+  48%  {filter: url(#filter2) blur(2px);}
+  60%  {filter: url(#filter2) blur(2px);}
+  61%  {filter: blur(2px);}
+  90%  {filter: url(#filter2) blur(1px);}
+  95%  {filter: url(#filter);}
+  100% {filter: none;}
+}
+
+svg {
+  /* absolute positioning takes svg out of flow of the document, it is positioned relative to it's closest parent with 'relative' or 'absolute' positioning, in this case the body */
+  position: absolute;
+  /* setting this makes it so that the svg won't eat up any clicks meant for elements underneath it */
+  pointer-events: none;
+  
+  /* you can use these offsets to change where exactly the svg is positioned */
+  top: 0;
+  left: 0;
+}

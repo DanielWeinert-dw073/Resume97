@@ -1,0 +1,10 @@
+node_modules
+dist
+*.local
+makingOf
+temp
+.firebaserc
+firebase-debug.*
+.firebase
+cypress/screenshots
+cypress/videos

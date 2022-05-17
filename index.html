@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Icon: https://www.flaticon.com/premium-icon/galaxy_1734167# -->
+  <!-- Generated with: https://realfavicongenerator.net/ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1" />
+  <meta name="description" content="Resume made with three.js." />
+  <meta name="keywords" content="resume, webgl, 3d, exploding, threejs , animation, javascript" />
+  <meta name="author" content="Maciej Piaseczny" />
+  <title>Daniel Weinert Resume</title>
+</head>
+
+<!-- 
+      ___           ___           ___       ___           ___           ___           ___     
+     /\__\         /\  \         /\__\     /\  \         /\  \         /\__\         /\  \    
+    /:/ _/_       /::\  \       /:/  /    /::\  \       /::\  \       /::|  |       /::\  \   
+   /:/ /\__\     /:/\:\  \     /:/  /    /:/\:\  \     /:/\:\  \     /:|:|  |      /:/\:\  \  
+  /:/ /:/ _/_   /::\~\:\  \   /:/  /    /:/  \:\  \   /:/  \:\  \   /:/|:|__|__   /::\~\:\  \ 
+ /:/_/:/ /\__\ /:/\:\ \:\__\ /:/__/    /:/__/ \:\__\ /:/__/ \:\__\ /:/ |::::\__\ /:/\:\ \:\__\
+ \:\/:/ /:/  / \:\~\:\ \/__/ \:\  \    \:\  \  \/__/ \:\  \ /:/  / \/__/~~/:/  / \:\~\:\ \/__/
+  \::/_/:/  /   \:\ \:\__\    \:\  \    \:\  \        \:\  /:/  /        /:/  /   \:\ \:\__\  
+   \:\/:/  /     \:\ \/__/     \:\  \    \:\  \        \:\/:/  /        /:/  /     \:\ \/__/  
+    \::/  /       \:\__\        \:\__\    \:\__\        \::/  /        /:/  /       \:\__\    
+     \/__/         \/__/         \/__/     \/__/         \/__/         \/__/         \/__/    
+                                                                                              
+     
+-->
+
+<body>
+  <div id="loadOverlay"
+    style="background-color:rgb(0, 0, 0); position:fixed; top:0px; left:0px; width:100%; height:100%; z-index:2;">
+  </div>
+
+  <div id="loading-screen">
+    <pre id="loader-text"></pre>
+    <div id="loader-prompt">
+      <div id="loader-loaded">
+        <span id="loader-loading">Loading</span>
+        <span id="loader-start">Click to continue</span>
+      </div>
+      <pre id="loader-landscape">[ Use landscape for better experience ]</pre>
+    </div>
+    <div id="loader"></div>
+  </div>
+
+  <canvas id="bg"></canvas>
+
+  <div id="chevron" class="chevron-container">
+    <div class="chevron"></div>
+    <div class="chevron"></div>
+    <div class="chevron"></div>
+  </div>
+
+  <main id="main">
+
+    <header>
+      <span id="header1">D</span>
+      <span id="header2">a</span>
+      <span id="header3">n</span>
+      <span id="header4">i</span>
+      <span id="header5">e</span>
+      <span id="header6">l</span>&ensp;
+      <span id="header7">W</span>
+      <span id="header8">e</span>
+      <span id="header9">i</span>
+      <span id="header10">n</span>
+      <span id="header11">e</span>
+      <span id="header12">r</span>
+      <span id="header13">t</span>&ensp;
+      <span id="header15">R</span>
+      <span id="header3">e</span>
+      <span id="header17">s</span>
+      <span id="header18">u</span>
+      <span id="header19">m</span>
+      <span id="header3">e</span>&ensp;
+    </header>
+
+    <blockquote class="left">
+      <p><span>Nature never appeals to intelligence until habit and instinct are useless. There is no intelligence
+          where there is no need of change.</span></p>
+      <br />
+      <p class="author"><span>The Time Machine - H.G Wells</span></p>
+    </blockquote>
+
+    <section class="right">
+      <h1 id="label1" tooltip>Daniel Weinert - WHO?</h1>
+      <scifi-popup id="popup1" opener="label1">
+        <h2>Meaning - WHO?</h2>
+        <p>
+          Wer bin ich? Meine Key notes:
+        <ul>
+          <li>Ehrgeizig</li>
+          <li>Teamfähig</li>
+          <li>Empathisch</li>
+          <li>Motiviert</li>
+          <li>Zuverlässig</li>
+        </ul>
+        </p>
+        <p>
+            Erfahrung
+
+            <li> Wirtschaft <br>
+              Grundkonzepte des Wirtschaftlichen handelns verstehen
+              Grundkonzepte des Rechenwesen und der Buchung verstehen und anwenden
+              Firebase Google Authentifizierung einrichten 
+              MySQL Datenbank einrichten und verknüpfen
+
+            </li>
+            <li>Web-Technologie <br>
+
+            React Anwendungen erstellen
+            Verbindung von Frontend mit Python backend 
+            Firebase Google Authentifizierung einrichten 
+            MySQL Datenbank einrichten und verknüpfen
+          </li>
+          <li>Mixed Reality <br>
+            Konzipieren einer möglichen Mixed Reality Anwendung
+            Modellierung der benötigten 3D Modelle
+            Codierung der Anwendungen   
+
+          </li>
+          <li>GameBased Learning <br>
+            Game-based Learning anwenden
+            Spiel zum testen Minecraft 
+            
+          </li>
+          <li>Customer Relationship Management <br>
+            Fallstudien auswerten 
+            Customer Relationship Anwendung konzipieren und einführen
+          </li>
+
+        </p>
+        <p>
+          Below there is a short list of things that I learned about while editing this webpage:
+          three.js, basics of computer graphics, WebGL, shaders;
+          typescript, javascript, css, scss;
+          vite; npm;
+          blender;
+          rotation matrices, quaternions.
+
+        </p>
+      </scifi-popup>
+    </section>
+
+    <section class="left">
+      <h1 id="label2" tooltip>Hobbys - WHO?</h1>
+      <scifi-popup opener="label2">
+        <h2>Hobbys - WHO?</h2>
+        <p>
+          In meiner Freizeit 
+          <li>
+            Volleyball
+          </li>
+          <li>
+            Fußball
+          </li>
+          <li>
+            Wandern
+          </li>
+          <li>
+            Spazieren
+          </li>
+          <li>
+            Gaming
+          </li>
+          <li>
+            Computertechnik
+          </li>
+          <li>
+            Programmierung mit UE und Three.js
+          </li>
+          <li>
+            Blender
+          </li>
+          <li>
+            Ehemalig Radball für 7 Jahre
+          </li>
+          Meine Schwächen? Durch die verschiedenen Anwendungen die ich für meine Arbeit benützte habe ich einen guten über blick über alle Anwendungen 
+          jedoch habe ich noch keine von ihnen meiner Meinung nach zu 100 % gemeistert. Da dies zu viel Zeit in Anspruch nehmen würde. Aber dafür habe ich einen elementaren 
+          Skill in meiner Arbeit erlangt.
+        <h3>Getting things done!</h3>
+        </p>
+      </scifi-popup>
+    </section>
+
+    <section class="right">
+      <h1 id="label3" tooltip>Projekte - WHAT?</h1>
+      <scifi-popup opener="label3">
+        <h2>Projekte - WHAT?</h2>
+
+        <h3>Projekte</h3>
+        <h4>GameBasedLearning anhand von Minecraft Education Edition</h4>
+        <p>
+            Game based Learning verstehen und anwenden. Spiel hier Minecraft Education Edition.  
+            Konzepte entwickeln, testen und auswerten.
+          <br>Role: verwaltung, Planung und Umsetzung
+        </p>
+        <h4>Projekt Mixed Reality Immersive Gardening </h4>
+        <p>
+          Konzipierung, Gestaltung und Codierung einer Mixed Reality Anwendung.
+          Für eine Gartengestaltung.
+          <br>Role: Unity Developer, C# Coder, Konziperer
+        </p>
+        <h4>Projekt Customer Realtionship Management </h4>
+        <p>
+          Notwendige Schritte für ein Unternehmen planen einleiten und Umsetzen.
+          Besonderheit: Datenschutz nach DSGVO beachten.
+          <br>Role:Teamleiter, 
+        </p>
+        <h4>LeanIX Systemverwaltung und Datenaufbereitung</h4>
+        <p>
+          IT-Systeme eines Unternehmens auswerten, Informationen sammeln, Informationen aufbereiten.
+          Dashboards erstellen und Empfehlungen basierend der Daten geben zum Beispiel bezüglich Ein- und Ausgliederung von Systemen und die Erweiterung von Lizenzen.
+          <br>Role: Human Ressource IT-Systemeverwaltung.
+        </p>
+
+        <h3>Certificates</h3>
+        <li>Certified Enterprise Architecture Practitioner Level 1</li>
+        <li>Certified Enterprise Architecture Associate Level 2</li>
+
+
+      </scifi-popup>
+    </section>
+
+    <blockquote class="left">
+      <p><span>A common mistake that people make when trying to design something completely foolproof is to
+          underestimate the ingenuity of complete fools.</span></p>
+      <p class="author"><span>-Douglas Adams</span></p>
+    </blockquote>
+
+    <section class="left">
+      <h1 id="label5" tooltip>Creation - HOW?</h1>
+      <scifi-popup opener="label5" style="--max-modal-width:100%; --max-modal-height: 100%; --modal-overflow: hidden;">
+        <h2 class="gallery-header">Behind-the-scenes:</h2>
+        <div class="gallery">
+          <input type="checkbox" id="btnControl1" /><label for="btnControl1"><img class='first'
+              src='assets/makingOf/stars.webp' alt='' title="Volumetric stars attempt - abandoned"> <img class='second'
+              src='assets/makingOf/stars.webp' alt='' title="Volumetric stars attempt - abandoned"></label>
+          <input type="checkbox" id="btnControl2" /><label for="btnControl2"><img class='first'
+              src='assets/makingOf/stars2.webp' alt='' title="Volumetric stars mixed with sprites - abandoned"> <img
+              class='second' src='assets/makingOf/stars2.webp' alt=''
+              title="Mixed with sprites attempt - abandoned"></label>
+          <input type="checkbox" id="btnControl3" /><label for="btnControl3"><img class='first'
+              src='assets/makingOf/plane.webp' alt='' title="3D skybox trick"> <img class='second'
+              src='assets/makingOf/plane.webp' alt='' title="3D skybox trick"></label>
+          <input type="checkbox" id="btnControl4" /><label for="btnControl4"><img class='first'
+              src='assets/makingOf/blender_nebula.webp' alt='' title="Procedural nebula in Blender"> <img class='second'
+              src='assets/makingOf/blender_nebula.webp' alt='' title="Procedural nebula in Blender"></label>
+          <input type="checkbox" id="btnControl5" /><label for="btnControl5"><img class='first'
+              src='assets/makingOf/blender_rock.webp' alt='' title="Exploding geometry in Blender"> <img class='second'
+              src='assets/makingOf/blender_rock.webp' alt='' title="Exploding geometry in Blender"></label>
+          <input type="checkbox" id="btnControl6" /><label for="btnControl6"><img class='first'
+              src='assets/makingOf/shader.webp' alt='' title="Fragment shader problem"> <img class='second'
+              src='assets/makingOf/shader.webp' alt='' title="Fragment shader problem"></label>
+        </div>
+      </scifi-popup>
+    </section>
+
+    <section class="right">
+      <h1 id="label4" tooltip>Credits - WHOM?</h1>
+      <scifi-popup opener="label4">
+        <h2>Credits - WHOM?</h2>
+
+        <p><a href="https://youtu.be/d4EgbgTm0Bg" target="_blank">3Blue1Brown</a> - quaternions explained and visualised
+        </p>
+        <p><a href="https://www.youtube.com/channel/UCEwhtpXrg5MmwlH04ANpL8A" target="_blank">SimonDev</a> - helpful
+          three.js tutorials
+        </p>
+        <p><a href="https://robertsspaceindustries.com/starmap/" target="_blank">ARK Starmap</a> - scene layout, light
+          speed effect inspiration</p>
+        <p><a href="https://vilapereira.artstation.com/projects/Ka1eeB" target="_blank">Vila 3D Artist</a> - adopted
+          procedural nebula shader for Blender</p>
+        <p><a href="https://tympanus.net/codrops/2019/03/26/exploding-3d-objects-with-three-js/"
+            target="_blank">Exploding
+            3D Objects with Three.js</a> - article by Yuriy Artyukh with adopted exploding object algorithm</p>
+        <p><a href="https://www.shadertoy.com/view/lslXRS" target="_blank">Noise animation - Lava</a> - Shadertoy by
+          nimitz with adopted lava shader</p>
+        <p><a href="https://www.clicktorelease.com/blog/vertex-displacement-noise-3d-webgl-glsl-three-js/"
+            target="_blank">Vertex
+            displacement</a> - article by Jaume Sanchez Elias with adopted displacement vertex shader</p>
+        <p><a href="https://mixkit.co/" target="_blank">Mixkit</a> - free video/audio assets</p>
+        <p><i>Suitable license information is provided in associated files on Github: <a
+              href="https://github.com/Seg0r/devStyleResume" target="_blank">devStyleResume</a></i></p>
+              <p><i>Maciej Piaseczny Developer: <a
+                href="https://github.com/Seg0r/devStyleResume" target="_blank">devStyleResume</a></i></p>
+
+        <h3>Inspirations:</h3>
+        <p><a href="https://www.youtube.com/c/Fireship" target="_blank">Fireship.io</a> - wisdom in 100 seconds? Jeff
+          Delaney summarizes many topics in best posibble way. It is his tutorial about three.js that inspired me to
+          make this website</p>
+        <p><a href="https://www.youtube.com/c/smartereveryday" target="_blank">Smarter Every Day</a> - Destins curiosity
+          to science is just contagious</p>
+        <p><a href="https://www.youtube.com/c/inanutshell" target="_blank">Kurzgesagt</a> - <i>explaining things with
+            optimistic nihilism</i></p>
+      </scifi-popup>
+    </section>
+
+
+
+    <footer class="right">
+      <p>Find me on:
+        <a >
+          <img src="https://github.githubassets.com/images/modules/site/icons/footer/linkedin.svg" width="19"
+            height="18" loading="lazy" decoding="async" alt="Linkedin icon">
+        </a>
+
+      </p>
+      <p>Thanks for watching!</p>
+      <p>Click <a id="exploreLink" title="Click to 🔍" href="javascript:;">HERE</a> to explore more!</p>
+    </footer>
+
+  </main>
+
+  <exploreTooltip id="exploreTooltip">
+    <p>Use mouse to explore!<br>Click <a id="unExploreLink" title="Click to stop exploring" href="javascript:;">HERE</a>
+      to exit.
+    </p>
+  </exploreTooltip>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
